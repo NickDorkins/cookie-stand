@@ -1,4 +1,9 @@
-*{
+* {
   margin:20px;
   background-color: salmon;
+}
+
+body {
+  text-align: center;
+  
 }
