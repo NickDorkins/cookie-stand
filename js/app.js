@@ -109,7 +109,7 @@ Stores.prototype.cookiesPerHour = function () {
 // Cookies per hour by Store Calulator
 Stores.prototype.render = function () {
   this.cookiesPerHour();
-  var tableEl = document.getElementById(dataTable);
+  var tableEl = document.getElementById('dataTable');
 
   var trElement = document.createElement('tr');
   tableEl.appendChild(trElement);
@@ -137,7 +137,7 @@ var paris = new Stores('Paris', 20, 38, 2.3, 6, 20);
 var lima = new Stores('Lima', 2, 16, 4.6, 6, 20);
 
 // Move Store Properties into Array
-var location = [seattle, tokyo, dubai, paris, lima]
+var location = [seattle, tokyo, dubai, paris, lima];
 
 // Call each city from array and run through cookie calculator
 for (var k = 0; k < location.length; k++) {
