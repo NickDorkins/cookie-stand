@@ -54,7 +54,7 @@
 
 // // Hours Variable
 // var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-// // 
+// //
 
 // // render: function() {
 // // call/invoke cookiesPerHourData
@@ -80,10 +80,13 @@ function ranNum(min, max) {
 }
 
 // console.log(seattle);
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+// Hours Array
+// var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 // Original Work "Seattle Store - console.log(lima);"
 
+// Store Constructor
 function Stores(name, minCust, maxCust, avgCookieSales, openTime, closeTime) {
   this.name = name;
   this.minCust = minCust;
@@ -95,6 +98,7 @@ function Stores(name, minCust, maxCust, avgCookieSales, openTime, closeTime) {
   this.dailyTotal = 0;
 }
 
+// Cookies Per Hour Calculator
 Stores.prototype.cookiesPerHour = function () {
   for (var i = 0; i < 14; i++) {
     this.hourlyTotal[i] = Math.ceil(ranNum(this.minCust, this.maxCust) * this.avgCookieSales);
@@ -102,7 +106,7 @@ Stores.prototype.cookiesPerHour = function () {
     console.log(this.hourlyTotal[i]);
   }
 };
-
+// Cookies per hour by Store Calulator
 Stores.prototype.render = function () {
   this.cookiesPerHour();
   var tableEl = document.getElementById(dataTable);
@@ -125,11 +129,22 @@ Stores.prototype.render = function () {
   tableEl.appendChild(trElement);
 };
 
+// Store Property Equations (^Inserts for Objects^)
 var seattle = new Stores('Seattle', 23, 65, 6.3, 6, 20);
-var tokyo = new Stores('Tokyo', 23, 65, 6.3, 6, 20);
-var dubai = new Stores('Dubai', 23, 65, 6.3, 6, 20);
-var paris = new Stores('Paris', 23, 65, 6.3, 6, 20);
-var lima = new Stores('Lima', 23, 65, 6.3, 6, 20);
+var tokyo = new Stores('Tokyo', 3, 24, 1.2, 6, 20);
+var dubai = new Stores('Dubai', 11, 38, 3.7, 6, 20);
+var paris = new Stores('Paris', 20, 38, 2.3, 6, 20);
+var lima = new Stores('Lima', 2, 16, 4.6, 6, 20);
+
+// Move Store Properties into Array
+var location = [seattle, tokyo, dubai, paris, lima]
+
+// Call each city from array and run through cookie calculator
+for (var k = 0; k < location.length; k++) {
+  location[k].cookiesPerHour();
+}
+
+
 
 
 
