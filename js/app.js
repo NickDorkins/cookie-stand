@@ -113,7 +113,7 @@ var seattle = {
   }
 };
 seattle.render();
-// console.log(seattle);
+console.log(seattle);
 
 
 // Tokyo Store
