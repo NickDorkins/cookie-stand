@@ -82,7 +82,7 @@ function ranNum(min, max) {
 // console.log(seattle);
 
 // Hours Array
-// var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 // Original Work "Seattle Store - console.log(lima);"
 
@@ -102,7 +102,7 @@ function Stores(name, minCust, maxCust, avgCookieSales, openTime, closeTime) {
 Stores.prototype.cookiesPerHour = function () {
   for (var i = 0; i < 14; i++) {
     this.hourlyTotal[i] = Math.ceil(ranNum(this.minCust, this.maxCust) * this.avgCookieSales);
-    this.dailyTotal += this,this.hourlyTotal[i];
+    this.dailyTotal += this.hourlyTotal[i];
     console.log(this.hourlyTotal[i]);
   }
 };
@@ -137,14 +137,36 @@ var paris = new Stores('Paris', 20, 38, 2.3, 6, 20);
 var lima = new Stores('Lima', 2, 16, 4.6, 6, 20);
 
 // Move Store Properties into Array
-var location = [seattle, tokyo, dubai, paris, lima];
+var city = [seattle, tokyo, dubai, paris, lima];
 
 // Call each city from array and run through cookie calculator
-for (var k = 0; k < location.length; k++) {
-  location[k].cookiesPerHour();
+for (var k = 0; k < city.length; k++) {
+  city[k].cookiesPerHour();
 }
 
+var tableStructure = document.getElementById('dataTable');
 
+function renderheader() {
+  var headerrow = document.createElement('tr');
+  var headerstore = document.createElement('th');
+  headerstore.textContent = 'Location';
+  headerrow.appendChild(headerstore);
+  tableStructure.appendChild(headerrow);
+  for (var i = 0; i < hours.length; i++) {
+    var headerhour = document.createElement('th');
+    headerhour.textContent = hours[i];
+    headerstore.appendChild(headerhour);
+    headerrow.appendChild(headerhour);
+  }
+  var headertotal = document.createElement('th');
+  headertotal.textContent = 'Store Totals';
+  headerrow.appendChild(headertotal);
+}
+
+renderheader();
+for (var l = 0; l < city.length; l++) {
+  city[l].render();
+}
 
 
 
