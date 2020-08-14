@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Instructions
 // B̶e̶f̶o̶r̶e̶ y̶o̶u̶ b̶e̶g̶i̶n̶,̶ c̶r̶e̶a̶t̶e̶ a̶ n̶e̶w̶ r̶e̶p̶o̶s̶i̶t̶o̶r̶y̶ w̶i̶t̶h̶i̶n̶ G̶i̶t̶H̶u̶b̶ c̶a̶l̶l̶l̶e̶d̶ “̶c̶o̶o̶k̶i̶e̶-̶s̶t̶a̶n̶d̶”̶.̶ M̶a̶k̶e̶ s̶u̶r̶e̶ t̶h̶a̶t̶ t̶h̶i̶s̶ r̶e̶p̶o̶s̶i̶t̶o̶r̶y̶ i̶s̶ p̶r̶o̶p̶e̶r̶t̶l̶y̶ s̶e̶t̶ u̶p̶ w̶i̶t̶h̶ a̶ l̶i̶c̶e̶n̶s̶e̶ a̶n̶d̶ a̶ r̶e̶a̶d̶m̶e̶.̶ C̶l̶o̶n̶e̶ t̶h̶i̶s̶ r̶e̶p̶o̶ d̶o̶w̶n̶ t̶o̶ y̶o̶u̶r̶ l̶o̶c̶a̶l̶ m̶a̶c̶h̶i̶n̶e̶
@@ -44,7 +44,6 @@
 // L̶i̶m̶a̶	2̶	1̶6̶	4̶.̶6̶
 // T̶h̶e̶s̶e̶ n̶u̶m̶b̶e̶r̶s̶ a̶r̶e̶ s̶i̶m̶p̶l̶y̶ P̶a̶t̶’̶s̶ e̶s̶t̶i̶m̶a̶t̶e̶s̶ f̶o̶r̶ n̶o̶w̶,̶ b̶u̶t̶ e̶v̶e̶n̶t̶u̶a̶l̶l̶y̶,̶ o̶n̶c̶e̶ t̶h̶e̶r̶e̶ h̶a̶s̶ b̶e̶e̶n̶ s̶o̶m̶e̶ h̶i̶s̶t̶o̶r̶y̶ c̶o̶l̶l̶e̶c̶t̶e̶d̶ t̶h̶a̶t̶ p̶r̶o̶v̶i̶d̶e̶s̶ m̶o̶r̶e̶ a̶c̶c̶u̶r̶a̶t̶e̶ n̶u̶m̶b̶e̶r̶s̶,̶ w̶e̶’̶l̶l̶ w̶a̶n̶t̶ t̶h̶e̶ a̶b̶i̶l̶i̶t̶y̶ t̶o̶ u̶p̶d̶a̶t̶e̶ t̶h̶e̶s̶e̶ n̶u̶m̶b̶e̶r̶s̶ f̶o̶r̶ e̶a̶c̶h̶ l̶o̶c̶a̶t̶i̶o̶n̶,̶ a̶n̶d̶ t̶o̶ a̶d̶d̶/̶r̶e̶m̶o̶v̶e̶ l̶o̶c̶a̶t̶i̶o̶n̶s̶.̶ B̶u̶t̶ w̶e̶’̶l̶l̶ n̶o̶t̶ b̶u̶i̶l̶d̶ a̶l̶l̶ o̶f̶ t̶h̶a̶t̶ t̶o̶d̶a̶y̶.̶ M̶a̶k̶e̶ s̶u̶r̶e̶ t̶o̶ m̶a̶k̶e̶ e̶a̶c̶h̶ l̶o̶c̶a̶t̶i̶o̶n̶ i̶s̶ i̶t̶s̶ o̶w̶n̶ J̶a̶v̶a̶S̶c̶r̶i̶p̶t̶ o̶b̶j̶e̶c̶t̶.̶
 
-
 // // Example from 8/8/20 Lecture
 // // CookiePerHour function() {
 // //   for(var i = 0; i < hours.length; i++) {
@@ -82,7 +81,7 @@ function ranNum(min, max) {
 // console.log(seattle);
 
 // Hours Array
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var hours = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM'];
 
 // Original Work "Seattle Store - console.log(lima);"
 
@@ -101,7 +100,9 @@ function Stores(name, minCust, maxCust, avgCookieSales, openTime, closeTime) {
 // Cookies Per Hour Calculator
 Stores.prototype.cookiesPerHour = function () {
   for (var i = 0; i < 14; i++) {
-    this.hourlyTotal[i] = Math.ceil(ranNum(this.minCust, this.maxCust) * this.avgCookieSales);
+    this.hourlyTotal[i] = Math.ceil(
+      ranNum(this.minCust, this.maxCust) * this.avgCookieSales
+    );
     this.dailyTotal += this.hourlyTotal[i];
     console.log(this.hourlyTotal[i]);
   }
@@ -167,10 +168,33 @@ renderheader();
 for (var l = 0; l < city.length; l++) {
   city[l].render();
 }
+renderFooter();
 
+function renderFooter() {
+  var trEl = document.createElement('tr');
+  tableStructure.appendChild(trEl);
+  var tdElement = document.createElement('td');
 
+  tdElement.textContent = 'Daily Total';
+  trEl.appendChild(tdElement);
 
+  var runningTotal;
 
+  for (var i = 0; i < hours.length; i++) {
+    var tdElement = document.createElement('td');
+    var total = 0;
+    for (var j = 0; j < city.length; j++) {
+      total += city[j].custPerHourArray[i];
+      runningTotal += city[j].custPerHourArray[i];
+    }
+    tdElement.textContent = total;
+    trEl.appendChild(tdElement);
+  }
+
+  var tdElement = document.createElement('td');
+  tdElement.textContent = runningTotal;
+  trEl.appendChild(tdElement);
+}
 
 // // Seattle Store
 // var seattle = {
@@ -204,7 +228,6 @@ for (var l = 0; l < city.length; l++) {
 // };
 // seattle.render();
 // console.log(seattle);
-
 
 // // Tokyo Store
 // var tokyo = {
