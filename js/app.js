@@ -103,8 +103,7 @@ Stores.prototype.cookiesPerHour = function () {
     this.hourlyTotal[i] = Math.ceil(
       ranNum(this.minCust, this.maxCust) * this.avgCookieSales
     );
-    this.dailyTotal += this.hourlyTotal[i];
-    console.log(this.hourlyTotal[i]);
+    // console.log(this.hourlyTotal[i]);
   }
 };
 // Cookies per hour by Store Calulator
@@ -123,6 +122,7 @@ Stores.prototype.render = function () {
     var tdElement = document.createElement('td');
     tdElement.textContent = this.hourlyTotal[j];
     trElement.appendChild(tdElement);
+    this.dailyTotal += this.hourlyTotal[j];
   }
   tdElement = document.createElement('td');
   tdElement.textContent = this.dailyTotal;
@@ -178,23 +178,34 @@ function renderFooter() {
   tdElement.textContent = 'Daily Total';
   trEl.appendChild(tdElement);
 
-  var runningTotal;
+  var runningTotal = [];
+  for (var k = 0; k < city.length; k++) {
+    runningTotal[k] = city[k].hourlyTotal;
+  }
+  console.log(runningTotal);
 
-  for (var i = 0; i < hours.length; i++) {
-    var tdElement = document.createElement('td');
-    var total = 0;
-    for (var j = 0; j < city.length; j++) {
-      total += city[j].custPerHourArray[i];
-      runningTotal += city[j].custPerHourArray[i];
+  var grandHourlyTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var grandDailyTotal = 0;
+
+  for (var l = 0; l < runningTotal[0].length; l++) {
+    for (var m = 0; m < runningTotal.length; m++) {
+      grandHourlyTotal[l] += Number(runningTotal[m][l]);
+      grandDailyTotal += Number(runningTotal[m][l]);
+      console.log(grandHourlyTotal[l]);
+      console.log(grandDailyTotal);
     }
-    tdElement.textContent = total;
+  }
+  for (var n = 0; n < grandHourlyTotal.length; n++) {
+    tdElement = document.createElement('td');
+    tdElement.textContent = grandHourlyTotal[n];
     trEl.appendChild(tdElement);
   }
-
-  var tdElement = document.createElement('td');
-  tdElement.textContent = runningTotal;
+  tdElement = document.createElement('td');
+  tdElement.textContent = grandDailyTotal;
   trEl.appendChild(tdElement);
 }
+
+
 
 // // Seattle Store
 // var seattle = {
