@@ -26,25 +26,36 @@
 
   <main>
 
-    <form id="inputInfo">
+    <form id="inputInfo" action="sales.html">
       <fieldset>
         <legend>Enter New Store Values</legend>
 
         <label>Store Name
-          <input type="text" placeholder="Store Name" name="storeName">
+          <input type="text" placeholder="Store Name" name="name">
         </label>
 
         <label>Min Customer
-          <input type="number" placeholder="Min Customer" name="minCustomer">
+          <input type="number" placeholder="Min Customer" name="minCust">
         </label>
 
         <label>Max Customer
-          <input type="number" placeholder="Max Customer" name="maxCustomer">
+          <input type="number" placeholder="Max Customer" name="maxCust">
         </label>
 
         <label>Average Cookies Per Sale
-          <input type="number" placeholder="Avg Cookies Per Sale" name="avgCookiesPerSale">
+          <input type="number" placeholder="Avg Cookies Per Sale" name="avgCookieSales" step=".1">
         </label>
+
+        <label>Open Time
+          <input type="number" placeholder="Open" name="openTime">
+        </label>
+
+        <label>Close
+          <input type="number" placeholder="Close" name="closeTime">
+        </label>
+
+        <button type="submit">Create</button>
+        <button type="reset">Reset</button>
       </fieldset>
     </form>
 
