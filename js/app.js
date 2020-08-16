@@ -205,6 +205,7 @@ function renderFooter() {
   trEl.appendChild(tdElement);
 }
 
+var inputInfo = document.getElementById('inputInfo');
 
 
 // // Seattle Store

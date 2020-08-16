@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="ANSI" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="ANSI" content="width=device-width, initial-scale=1.0" />
   <title>Pat's Sales Page</title>
   <link rel="stylesheet" href="styles/style.css">
 
-<style>
-  header>ul{
-    list-style-type: circle;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: aquamarine;
-  }
-
-</style>
+  <style>
+    header>ul {
+      list-style-type: circle;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: aquamarine;
+    }
+  </style>
 
 </head>
 
@@ -25,7 +25,30 @@
   </header>
 
   <main>
-    <img  src="images/salmon.png">
+
+    <form id="inputInfo">
+      <fieldset>
+        <legend>Enter New Store Values</legend>
+
+        <label>Store Name
+          <input type="text" placeholder="Store Name" name="storeName">
+        </label>
+
+        <label>Min Customer
+          <input type="number" placeholder="Min Customer" name="minCustomer">
+        </label>
+
+        <label>Max Customer
+          <input type="number" placeholder="Max Customer" name="maxCustomer">
+        </label>
+
+        <label>Average Cookies Per Sale
+          <input type="number" placeholder="Avg Cookies Per Sale" name="avgCookiesPerSale">
+        </label>
+      </fieldset>
+    </form>
+
+    <img src="images/salmon.png">
     <a href="index.html">Home Page</a>
 
 
@@ -46,11 +69,12 @@
     <ul id="lima"></ul>
      -->
   </main>
-  
+
   <footer>
 
   </footer>
   <script src="js/app.js"></script>
 
 </body>
+
 </html>
