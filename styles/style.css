@@ -5,5 +5,28 @@
 
 body {
   text-align: center;
-  
+  font-family: 'Russo One', sans-serif;
 }
+
+img {
+  height:300px;
+  width: auto;
+}
+
+
+header {
+  color: greenyellow;
+}
+
+fieldset {
+  border: 15px solid fuchsia;
+}
+
+table, th, td {
+  border: 2px solid black;
+  margin: 0px auto;
+  font-size: 25px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+
