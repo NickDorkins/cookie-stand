@@ -1,6 +1,8 @@
+
+
 * {
   margin:20px;
-  background-color: salmon;
+  background-color:#FFA07A;
 }
 
 body {
@@ -8,25 +10,82 @@ body {
   font-family: 'Russo One', sans-serif;
 }
 
+.header {
+  font-size:25px;
+  color: lightslategrey;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#homeButton{
+  display: inline-block;
+  float: left;
+}
+
+#salesButton{
+  display: inline-block;
+  float: left;
+}
+
 img {
-  height:300px;
+  height:200px;
   width: auto;
 }
 
 
-header {
-  color: greenyellow;
-}
 
 fieldset {
   border: 15px solid fuchsia;
+  background-color: #b7b7b7;
+  
 }
+
+label {
+  background-color: #b7b7b7;
+  color: salmon;
+}
+
+input {
+  background-color: #b7b7b7;
+  color:salmon;
+}
+
+button {
+  background-color: #b7b7b7;
+  color:salmon;
+}
+
+::placeholder {
+  color: rgb(159, 16, 0);
+}
+
+
 
 table, th, td {
   border: 2px solid black;
   margin: 0px auto;
   font-size: 25px;
   font-family: 'Press Start 2P', cursive;
+  background-color: azure;
 }
 
+#contact * {
+  display: display: inline-block;
+  width: 900px;
+  height: auto;
+  margin: 0px auto;
+  border: 5px solid ;
+  background-color: aquamarine;
+}
 
+#contact p {
+  width:700px;
+}
+
+a#email {
+  width: 695px;
+}
+
+/* h1#badwolffe {
+  font-size: 25px;
+  color: purple;
+} */
